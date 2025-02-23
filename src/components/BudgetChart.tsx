@@ -20,7 +20,7 @@ const BudgetChart: FC = () => {
         </div>
       </div>
       <div className="budget-chart__content">
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer height={240}>
           <PieChart>
             <Pie data={data} innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
               {data.map((entry, index) => (

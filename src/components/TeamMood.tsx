@@ -34,12 +34,6 @@ const TeamMood: FC = () => {
       avatar: "/team/jose.jpeg",
       mood: 0, // 😢
     },
-    {
-      name: "Maria",
-      role: "UX Junior",
-      avatar: "/team/maria.jpg",
-      mood: 75, // 🙂
-    },
   ];
 
   return (
