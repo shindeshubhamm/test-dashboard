@@ -100,3 +100,272 @@ $color1: #2f354a;
     font-weight: 500;
   }
 }
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: calc(100vh - 64px);
+  padding: 2rem;
+  margin-top: -2rem;
+
+  &__top {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__team {
+    width: 320px;
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    > * {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  &__charts {
+    display: flex;
+    gap: 2rem;
+
+    > * {
+      flex: 1;
+    }
+  }
+
+  &__bottom {
+    padding-right: 2rem;
+  }
+}
+
+.dash-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stats-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &--danger {
+    background: #fee2e2;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #40e6d2;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__count {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__label {
+    color: #6b7280;
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+  }
+}
+
+.revenue-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__toggle {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: none;
+      cursor: pointer;
+
+      &.active {
+        background: #40e6d2;
+        color: white;
+        border-color: #40e6d2;
+      }
+    }
+  }
+}
+
+.budget-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: none;
+      cursor: pointer;
+
+      &.active {
+        background: #40e6d2;
+        color: white;
+        border-color: #40e6d2;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &__total {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+
+  &__legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.team-mood {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+
+  &__title {
+    margin: 0 0 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  &__member {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    display: block;
+    font-weight: 500;
+  }
+
+  &__role {
+    display: block;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+
+  &__emoji {
+    font-size: 1.25rem;
+  }
+}
