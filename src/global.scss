@@ -1,0 +1,102 @@
+// Colors
+$color1: #2f354a;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $color1;
+  color: white;
+  height: 64px;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  margin-right: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  user-select: none;
+  color: #40e6d2;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: white;
+    }
+
+    &.active {
+      color: white;
+    }
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
