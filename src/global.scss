@@ -1,5 +1,7 @@
 // Colors
 $color1: #2f354a;
+$teal: #008174;
+$tealHover: #00665a;
 
 .header {
   display: flex;
@@ -178,7 +180,7 @@ $color1: #2f354a;
     justify-content: center;
     border-radius: 8px;
     background: #f3f4f6;
-    color: #40e6d2;
+    color: $teal;
   }
 
   &__content {
@@ -224,9 +226,9 @@ $color1: #2f354a;
       cursor: pointer;
 
       &.active {
-        background: #40e6d2;
+        background: $teal;
         color: white;
-        border-color: #40e6d2;
+        border-color: $teal;
       }
     }
   }
@@ -264,11 +266,12 @@ $color1: #2f354a;
       border-radius: 6px;
       background: none;
       cursor: pointer;
+      font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
 
       &.active {
-        background: #40e6d2;
+        background: $teal;
         color: white;
-        border-color: #40e6d2;
+        border-color: $teal;
       }
     }
   }
@@ -383,6 +386,154 @@ $color1: #2f354a;
 
   &__emoji {
     display: none;
+  }
+}
+
+.budget-status {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  &__title {
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    span {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+  }
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  &__budget,
+  &__profitability {
+    span {
+      display: block;
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+    strong {
+      font-size: 1rem;
+      &.negative {
+        color: #ef4444;
+      }
+      &.positive {
+        color: #10b981;
+      }
+    }
+  }
+
+  &__progress {
+    .progress-bar {
+      height: 4px;
+      border-radius: 2px;
+      margin-bottom: 0.75rem;
+
+      &--over {
+        background: #ef4444;
+      }
+      &--on {
+        background: #f59e0b;
+      }
+      &--under {
+        background: #10b981;
+      }
+    }
+  }
+
+  &__hours {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #6b7280;
+
+    &-over {
+      color: #ef4444;
+    }
+  }
+}
+
+.btn {
+  padding: 0.625rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  &:hover {
+    background: #f9fafb;
+  }
+
+  &--primary {
+    background: $teal;
+    color: white;
+    border-color: $teal;
+
+    &:hover {
+      background: $tealHover;
+    }
   }
 }
 

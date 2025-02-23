@@ -14,8 +14,8 @@ const BudgetChart: FC = () => {
         <div className="budget-chart__title">
           <h3>Budget</h3>
           <div className="budget-chart__toggle">
-            <button>Profitability</button>
-            <button className="active">Status</button>
+            <button className="budget-chart__button">Profitability</button>
+            <button className="budget-chart__button active">Status</button>
           </div>
         </div>
       </div>

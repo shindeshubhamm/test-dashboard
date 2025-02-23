@@ -8,7 +8,7 @@ import {
 import Layout from "./components/Layout";
 import StatsCard from "./components/StatsCard";
 import RevenueChart from "./components/RevenueChart";
-// import BudgetStatus from "./components/BudgetStatus";
+import BudgetStatus from "./components/BudgetStatus";
 import BudgetChart from "./components/BudgetChart";
 import TeamMood from "./components/TeamMood";
 import "./global.scss";
@@ -40,7 +40,9 @@ function App() {
             <TeamMood />
           </div>
         </div>
-        <div className="dashboard__bottom">{/* <BudgetStatus /> */}</div>
+        <div className="dashboard__bottom">
+          <BudgetStatus />
+        </div>
       </div>
     </Layout>
   );
