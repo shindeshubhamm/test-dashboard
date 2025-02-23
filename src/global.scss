@@ -253,6 +253,9 @@ $breakpoint-xl: 1280px;
     border-radius: 8px;
     background: $bg-gray-100;
     color: $teal;
+    &--danger {
+      color: $status-red;
+    }
   }
 
   &__content {
