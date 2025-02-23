@@ -1,10 +1,11 @@
 import { FC } from "react";
+import MoodSlider from "./MoodSlider";
 
 interface TeamMember {
   name: string;
   role: string;
   avatar: string;
-  mood: "happy" | "neutral" | "sad";
+  mood: number; // Values: 0, 25, 50, 75, 100
 }
 
 const TeamMood: FC = () => {
@@ -13,46 +14,33 @@ const TeamMood: FC = () => {
       name: "Andrea",
       role: "UX/UI",
       avatar: "/team/andrea.jpeg",
-      mood: "happy",
+      mood: 100, // 😊
     },
     {
       name: "Alvaro",
       role: "Dev and Manager",
       avatar: "/team/alvaro.jpg",
-      mood: "happy",
+      mood: 75, // 🙂
     },
     {
       name: "Juan",
       role: "UX Senior",
       avatar: "/team/juan.jpg",
-      mood: "neutral",
+      mood: 25, // 😕
     },
     {
       name: "Jose",
       role: "Marketing",
       avatar: "/team/jose.jpeg",
-      mood: "happy",
+      mood: 0, // 😢
     },
     {
       name: "Maria",
       role: "UX Junior",
       avatar: "/team/maria.jpg",
-      mood: "happy",
+      mood: 75, // 🙂
     },
   ];
-
-  const getMoodEmoji = (mood: TeamMember["mood"]) => {
-    switch (mood) {
-      case "happy":
-        return "😊";
-      case "neutral":
-        return "😐";
-      case "sad":
-        return "😢";
-      default:
-        return "😊";
-    }
-  };
 
   return (
     <div className="team-mood">
@@ -60,12 +48,16 @@ const TeamMood: FC = () => {
       <div className="team-mood__list">
         {team.map((member) => (
           <div key={member.name} className="team-mood__member">
-            <img src={member.avatar} alt={member.name} className="team-mood__avatar" />
-            <div className="team-mood__info">
-              <span className="team-mood__name">{member.name}</span>
-              <span className="team-mood__role">{member.role}</span>
+            <div className="team-mood__details">
+              <img src={member.avatar} alt={member.name} className="team-mood__avatar" />
+              <div className="team-mood__info">
+                <span className="team-mood__name">{member.name}</span>
+                <span className="team-mood__role">{member.role}</span>
+              </div>
             </div>
-            <span className="team-mood__emoji">{getMoodEmoji(member.mood)}</span>
+            <div className="team-mood__slider">
+              <MoodSlider value={member.mood} />
+            </div>
           </div>
         ))}
       </div>

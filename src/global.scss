@@ -338,9 +338,20 @@ $color1: #2f354a;
 
   &__member {
     display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e7eb;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__details {
+    display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.5rem 0;
   }
 
   &__avatar {
@@ -352,6 +363,7 @@ $color1: #2f354a;
 
   &__info {
     flex: 1;
+    min-width: 0;
   }
 
   &__name {
@@ -365,7 +377,39 @@ $color1: #2f354a;
     color: #6b7280;
   }
 
+  &__slider {
+    padding-left: 52px;
+  }
+
   &__emoji {
-    font-size: 1.25rem;
+    display: none;
+  }
+}
+
+.mood-slider {
+  width: 100%;
+  position: relative;
+
+  &__track {
+    height: 4px;
+    background-color: #e5e7eb;
+    border-radius: 2px;
+    position: relative;
+    margin: 12px 0;
+  }
+
+  &__progress {
+    height: 100%;
+    background: linear-gradient(to right, #ef4444, #f59e0b, #10b981);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  &__emoji {
+    position: absolute;
+    top: -16px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    transition: left 0.3s ease;
   }
 }
