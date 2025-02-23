@@ -29,7 +29,7 @@ const BudgetStatus: FC = () => {
       company: "Bankia",
       totalBudget: 70000,
       profitability: 4000,
-      actualHours: 100,
+      actualHours: 600,
       totalHours: 1000,
       status: "on",
       avatar: "/team/juan.jpg",
@@ -39,7 +39,7 @@ const BudgetStatus: FC = () => {
       company: "Bankia",
       totalBudget: 70000,
       profitability: 4000,
-      actualHours: 100,
+      actualHours: 1100,
       totalHours: 2000,
       status: "under",
       avatar: "/team/jose.jpeg",
@@ -49,12 +49,16 @@ const BudgetStatus: FC = () => {
       company: "Bankia",
       totalBudget: 70000,
       profitability: 4000,
-      actualHours: 100,
+      actualHours: 800,
       totalHours: 1000,
       status: "under",
       avatar: "/team/maria.jpg",
     },
   ];
+
+  const getProgressWidth = (actual: number, total: number) => {
+    return (actual / total) * 100;
+  };
 
   return (
     <div className="budget-status">
@@ -99,7 +103,12 @@ const BudgetStatus: FC = () => {
               </div>
             </div>
             <div className="project-card__progress">
-              <div className={`progress-bar progress-bar--${project.status}`} />
+              <div className="project-card__progress-bar">
+                <div
+                  className={`progress-bar progress-bar--${project.status}`}
+                  style={{ width: `${getProgressWidth(project.actualHours, project.totalHours)}%` }}
+                />
+              </div>
               <div className="project-card__hours">
                 <span>Actual hours: {project.actualHours}</span>
                 {project.status === "over" && (

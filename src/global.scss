@@ -583,19 +583,30 @@ $breakpoint-xl: 1280px;
   }
 
   &__progress {
-    .progress-bar {
+    &-bar {
+      position: relative;
+      background-color: #e5e7eb;
       height: 4px;
       border-radius: 2px;
       margin-bottom: 0.75rem;
 
-      &--over {
-        background: #ef4444;
-      }
-      &--on {
-        background: #f59e0b;
-      }
-      &--under {
-        background: #10b981;
+      .progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+
+        &--over {
+          background: #ef4444;
+        }
+        &--on {
+          background: #f59e0b;
+        }
+        &--under {
+          background: #10b981;
+        }
       }
     }
   }
